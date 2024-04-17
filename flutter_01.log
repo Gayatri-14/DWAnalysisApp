@@ -1,0 +1,92 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d chrome --devtools-server-address http://127.0.0.1:9101/ --target E:\AnalysisProject\project\lib\main.dart
+
+## exception
+
+OutOfMemoryError: Out of Memory
+
+```
+#0      new Uint8List (dart:typed_data-patch/typed_data_patch.dart:2237:3)
+#1      _File.readAsBytesSync (dart:io/file_impl.dart:589:16)
+#2      ForwardingFile.readAsBytesSync (package:file/src/forwarding/forwarding_file.dart:91:43)
+#3      ForwardingFile.readAsBytesSync (package:file/src/forwarding/forwarding_file.dart:91:43)
+#4      WebMemoryFS.write (package:flutter_tools/src/web/memory_fs.dart:34:42)
+#5      WebDevFS.update (package:flutter_tools/src/isolated/devfs_web.dart:919:45)
+#6      _rootRunUnary (dart:async/zone.dart:1407:47)
+#7      _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#8      _FutureListener.handleValue (dart:async/future_impl.dart:162:18)
+#9      Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:846:45)
+#10     Future._propagateToListeners (dart:async/future_impl.dart:875:13)
+#11     Future._completeWithValue (dart:async/future_impl.dart:647:5)
+#12     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:721:7)
+#13     _rootRun (dart:async/zone.dart:1399:13)
+#14     _CustomZone.run (dart:async/zone.dart:1301:19)
+#15     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#16     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#17     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#18     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#19     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#20     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:185:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.16.7, on Microsoft Windows [Version 10.0.22621.3296], locale en-IN)
+    • Flutter version 3.16.7 on channel stable at C:\Users\Harshavardhan\Downloads\flutter_windows_3.16.7-stable\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision ef1af02aea (3 months ago), 2024-01-11 15:19:26 -0600
+    • Engine revision 4a585b7929
+    • Dart version 3.2.4
+    • DevTools version 2.28.5
+
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    • Android SDK at C:\Users\Harshavardhan\AppData\Local\Android\sdk
+    ✗ cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/windows#android-setup for more details.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop Windows apps (Visual Studio Enterprise 2022 17.9.0 Preview 5.0)
+    • Visual Studio at D:\Apna\programFiles
+    • Visual Studio Enterprise 2022 version 17.9.34526.213
+    • The current Visual Studio installation is a pre-release version. It may not be supported by Flutter yet.
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[✓] Android Studio (version 2022.3)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-10027231)
+
+[✓] VS Code (version 1.88.0)
+    • VS Code at C:\Users\Harshavardhan\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.86.0
+
+[✓] Connected device (3 available)
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.22621.3296]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 123.0.6312.106
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 123.0.2420.81
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
